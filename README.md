@@ -57,3 +57,7 @@ spark docs:
 
 logs:
 * https://stackoverflow.com/questions/27248997/how-to-suppress-spark-logging-in-unit-tests
+
+aws setup:
+* https://docs.localstack.cloud/aws/capabilities/config/initialization-hooks/#example
+* https://github.com/localstack/awscli-local

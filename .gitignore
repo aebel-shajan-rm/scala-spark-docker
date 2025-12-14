@@ -49,3 +49,6 @@ build/
 
 ### Scala ###
 .bsp/
+
+## local stack
+volume

@@ -1,4 +1,19 @@
 services:
+  localstack:
+    container_name: "localstack-main"
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      - DEBUG=1
+    volumes:
+      - "./scripts/localstack-bootstrap.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
+      - "./volume:/var/lib/localstack" # localstack aws storage
+      - "/var/run/docker.sock:/var/run/docker.sock" # access to docker daemon, potentially risky but used in docs
+      - "./data/:/tmp/data"
+
   spark-scala-demo:
+    depends_on:
+      - localstack
     build: .
     container_name: spark-scala-demo
