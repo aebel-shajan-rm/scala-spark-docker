@@ -6,6 +6,7 @@ object EtlJobLauncher extends Serializable with EtlJob {
     try {
       val spark: SparkSession = SparkSession
         .builder
+        .master("local[*]") // remove this when running in clusters
         .appName("Example etl job")
         .getOrCreate()
 
