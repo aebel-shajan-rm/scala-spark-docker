@@ -1,0 +1,4 @@
+services:
+  spark-scala-demo:
+    build: .
+    container_name: spark-scala-demo
